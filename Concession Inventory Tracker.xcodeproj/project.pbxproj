@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BC8BE11E20081075007FA7FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BE11D20081075007FA7FD /* AppDelegate.swift */; };
+		BC8BE12020081075007FA7FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BE11F20081075007FA7FD /* ViewController.swift */; };
+		BC8BE12320081075007FA7FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC8BE12120081075007FA7FD /* Main.storyboard */; };
+		BC8BE12520081075007FA7FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC8BE12420081075007FA7FD /* Assets.xcassets */; };
+		BC8BE12820081075007FA7FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC8BE12620081075007FA7FD /* LaunchScreen.storyboard */; };
+		BC8BE13320081075007FA7FD /* Concession_Inventory_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BE13220081075007FA7FD /* Concession_Inventory_TrackerTests.swift */; };
+		BC8BE13E20081075007FA7FD /* Concession_Inventory_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BE13D20081075007FA7FD /* Concession_Inventory_TrackerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BC8BE12F20081075007FA7FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC8BE11220081075007FA7FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC8BE11920081075007FA7FD;
+			remoteInfo = "Concession Inventory Tracker";
+		};
+		BC8BE13A20081075007FA7FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC8BE11220081075007FA7FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC8BE11920081075007FA7FD;
+			remoteInfo = "Concession Inventory Tracker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BC8BE11A20081075007FA7FD /* Concession Inventory Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Concession Inventory Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC8BE11D20081075007FA7FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BC8BE11F20081075007FA7FD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BC8BE12220081075007FA7FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC8BE12420081075007FA7FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC8BE12720081075007FA7FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC8BE12920081075007FA7FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC8BE12E20081075007FA7FD /* Concession Inventory TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Concession Inventory TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC8BE13220081075007FA7FD /* Concession_Inventory_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concession_Inventory_TrackerTests.swift; sourceTree = "<group>"; };
+		BC8BE13420081075007FA7FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC8BE13920081075007FA7FD /* Concession Inventory TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Concession Inventory TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC8BE13D20081075007FA7FD /* Concession_Inventory_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concession_Inventory_TrackerUITests.swift; sourceTree = "<group>"; };
+		BC8BE13F20081075007FA7FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BC8BE11720081075007FA7FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8BE12B20081075007FA7FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8BE13620081075007FA7FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BC8BE11120081075007FA7FD = {
+			isa = PBXGroup;
+			children = (
+				BC8BE11C20081075007FA7FD /* Concession Inventory Tracker */,
+				BC8BE13120081075007FA7FD /* Concession Inventory TrackerTests */,
+				BC8BE13C20081075007FA7FD /* Concession Inventory TrackerUITests */,
+				BC8BE11B20081075007FA7FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC8BE11B20081075007FA7FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BC8BE11A20081075007FA7FD /* Concession Inventory Tracker.app */,
+				BC8BE12E20081075007FA7FD /* Concession Inventory TrackerTests.xctest */,
+				BC8BE13920081075007FA7FD /* Concession Inventory TrackerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC8BE11C20081075007FA7FD /* Concession Inventory Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				BC8BE11D20081075007FA7FD /* AppDelegate.swift */,
+				BC8BE11F20081075007FA7FD /* ViewController.swift */,
+				BC8BE12120081075007FA7FD /* Main.storyboard */,
+				BC8BE12420081075007FA7FD /* Assets.xcassets */,
+				BC8BE12620081075007FA7FD /* LaunchScreen.storyboard */,
+				BC8BE12920081075007FA7FD /* Info.plist */,
+			);
+			path = "Concession Inventory Tracker";
+			sourceTree = "<group>";
+		};
+		BC8BE13120081075007FA7FD /* Concession Inventory TrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC8BE13220081075007FA7FD /* Concession_Inventory_TrackerTests.swift */,
+				BC8BE13420081075007FA7FD /* Info.plist */,
+			);
+			path = "Concession Inventory TrackerTests";
+			sourceTree = "<group>";
+		};
+		BC8BE13C20081075007FA7FD /* Concession Inventory TrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BC8BE13D20081075007FA7FD /* Concession_Inventory_TrackerUITests.swift */,
+				BC8BE13F20081075007FA7FD /* Info.plist */,
+			);
+			path = "Concession Inventory TrackerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BC8BE11920081075007FA7FD /* Concession Inventory Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC8BE14220081075007FA7FD /* Build configuration list for PBXNativeTarget "Concession Inventory Tracker" */;
+			buildPhases = (
+				BC8BE11620081075007FA7FD /* Sources */,
+				BC8BE11720081075007FA7FD /* Frameworks */,
+				BC8BE11820081075007FA7FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Concession Inventory Tracker";
+			productName = "Concession Inventory Tracker";
+			productReference = BC8BE11A20081075007FA7FD /* Concession Inventory Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BC8BE12D20081075007FA7FD /* Concession Inventory TrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC8BE14520081075007FA7FD /* Build configuration list for PBXNativeTarget "Concession Inventory TrackerTests" */;
+			buildPhases = (
+				BC8BE12A20081075007FA7FD /* Sources */,
+				BC8BE12B20081075007FA7FD /* Frameworks */,
+				BC8BE12C20081075007FA7FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC8BE13020081075007FA7FD /* PBXTargetDependency */,
+			);
+			name = "Concession Inventory TrackerTests";
+			productName = "Concession Inventory TrackerTests";
+			productReference = BC8BE12E20081075007FA7FD /* Concession Inventory TrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BC8BE13820081075007FA7FD /* Concession Inventory TrackerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BC8BE14820081075007FA7FD /* Build configuration list for PBXNativeTarget "Concession Inventory TrackerUITests" */;
+			buildPhases = (
+				BC8BE13520081075007FA7FD /* Sources */,
+				BC8BE13620081075007FA7FD /* Frameworks */,
+				BC8BE13720081075007FA7FD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BC8BE13B20081075007FA7FD /* PBXTargetDependency */,
+			);
+			name = "Concession Inventory TrackerUITests";
+			productName = "Concession Inventory TrackerUITests";
+			productReference = BC8BE13920081075007FA7FD /* Concession Inventory TrackerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BC8BE11220081075007FA7FD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Matthew Wells";
+				TargetAttributes = {
+					BC8BE11920081075007FA7FD = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					BC8BE12D20081075007FA7FD = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BC8BE11920081075007FA7FD;
+					};
+					BC8BE13820081075007FA7FD = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BC8BE11920081075007FA7FD;
+					};
+				};
+			};
+			buildConfigurationList = BC8BE11520081075007FA7FD /* Build configuration list for PBXProject "Concession Inventory Tracker" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BC8BE11120081075007FA7FD;
+			productRefGroup = BC8BE11B20081075007FA7FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BC8BE11920081075007FA7FD /* Concession Inventory Tracker */,
+				BC8BE12D20081075007FA7FD /* Concession Inventory TrackerTests */,
+				BC8BE13820081075007FA7FD /* Concession Inventory TrackerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BC8BE11820081075007FA7FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC8BE12820081075007FA7FD /* LaunchScreen.storyboard in Resources */,
+				BC8BE12520081075007FA7FD /* Assets.xcassets in Resources */,
+				BC8BE12320081075007FA7FD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8BE12C20081075007FA7FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8BE13720081075007FA7FD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BC8BE11620081075007FA7FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC8BE12020081075007FA7FD /* ViewController.swift in Sources */,
+				BC8BE11E20081075007FA7FD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8BE12A20081075007FA7FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC8BE13320081075007FA7FD /* Concession_Inventory_TrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC8BE13520081075007FA7FD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BC8BE13E20081075007FA7FD /* Concession_Inventory_TrackerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BC8BE13020081075007FA7FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC8BE11920081075007FA7FD /* Concession Inventory Tracker */;
+			targetProxy = BC8BE12F20081075007FA7FD /* PBXContainerItemProxy */;
+		};
+		BC8BE13B20081075007FA7FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC8BE11920081075007FA7FD /* Concession Inventory Tracker */;
+			targetProxy = BC8BE13A20081075007FA7FD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BC8BE12120081075007FA7FD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC8BE12220081075007FA7FD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BC8BE12620081075007FA7FD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BC8BE12720081075007FA7FD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC8BE14020081075007FA7FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BC8BE14120081075007FA7FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BC8BE14320081075007FA7FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Concession Inventory Tracker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Test.Concession-Inventory-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC8BE14420081075007FA7FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Concession Inventory Tracker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Test.Concession-Inventory-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC8BE14620081075007FA7FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Concession Inventory TrackerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Test.Concession-Inventory-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Concession Inventory Tracker.app/Concession Inventory Tracker";
+			};
+			name = Debug;
+		};
+		BC8BE14720081075007FA7FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Concession Inventory TrackerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Test.Concession-Inventory-TrackerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Concession Inventory Tracker.app/Concession Inventory Tracker";
+			};
+			name = Release;
+		};
+		BC8BE14920081075007FA7FD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Concession Inventory TrackerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Test.Concession-Inventory-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Concession Inventory Tracker";
+			};
+			name = Debug;
+		};
+		BC8BE14A20081075007FA7FD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Concession Inventory TrackerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Test.Concession-Inventory-TrackerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Concession Inventory Tracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BC8BE11520081075007FA7FD /* Build configuration list for PBXProject "Concession Inventory Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC8BE14020081075007FA7FD /* Debug */,
+				BC8BE14120081075007FA7FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC8BE14220081075007FA7FD /* Build configuration list for PBXNativeTarget "Concession Inventory Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC8BE14320081075007FA7FD /* Debug */,
+				BC8BE14420081075007FA7FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC8BE14520081075007FA7FD /* Build configuration list for PBXNativeTarget "Concession Inventory TrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC8BE14620081075007FA7FD /* Debug */,
+				BC8BE14720081075007FA7FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC8BE14820081075007FA7FD /* Build configuration list for PBXNativeTarget "Concession Inventory TrackerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC8BE14920081075007FA7FD /* Debug */,
+				BC8BE14A20081075007FA7FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BC8BE11220081075007FA7FD /* Project object */;
+}
