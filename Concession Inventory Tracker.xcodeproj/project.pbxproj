@@ -25,6 +25,7 @@
 		BC8BE1562008236B007FA7FD /* Supplier3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BE1552008236B007FA7FD /* Supplier3ViewController.swift */; };
 		BC8E9553200B111C00B4C4C8 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E9552200B111C00B4C4C8 /* StatsViewController.swift */; };
 		BC8E9555200C1BDD00B4C4C8 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E9554200C1BDD00B4C4C8 /* AddItemViewController.swift */; };
+		BCA9A1122012C6BF00A2836B /* OtherFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA9A1112012C6BF00A2836B /* OtherFunctions.swift */; };
 		BCB4C881200D66B200C748A3 /* DisplayItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4C880200D66B200C748A3 /* DisplayItemViewController.swift */; };
 		BCDB09462012A6C00027AC62 /* test.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCDB09452012A6BF0027AC62 /* test.xib */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		BC8BE1552008236B007FA7FD /* Supplier3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supplier3ViewController.swift; sourceTree = "<group>"; };
 		BC8E9552200B111C00B4C4C8 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		BC8E9554200C1BDD00B4C4C8 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		BCA9A1112012C6BF00A2836B /* OtherFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherFunctions.swift; sourceTree = "<group>"; };
 		BCB4C880200D66B200C748A3 /* DisplayItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayItemViewController.swift; sourceTree = "<group>"; };
 		BCDB09452012A6BF0027AC62 /* test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +133,7 @@
 				BC8E9552200B111C00B4C4C8 /* StatsViewController.swift */,
 				BC2296DC2009316000C0A48F /* EditItemViewController.swift */,
 				BC8E9554200C1BDD00B4C4C8 /* AddItemViewController.swift */,
+				BCA9A1112012C6BF00A2836B /* OtherFunctions.swift */,
 				BCB4C880200D66B200C748A3 /* DisplayItemViewController.swift */,
 				BC8BE12120081075007FA7FD /* Main.storyboard */,
 				BCDB09452012A6BF0027AC62 /* test.xib */,
@@ -306,6 +309,7 @@
 				BC8BE12020081075007FA7FD /* WeekViewController.swift in Sources */,
 				BC8E9555200C1BDD00B4C4C8 /* AddItemViewController.swift in Sources */,
 				BCB4C881200D66B200C748A3 /* DisplayItemViewController.swift in Sources */,
+				BCA9A1122012C6BF00A2836B /* OtherFunctions.swift in Sources */,
 				BC13D2AB20117A9E0099EA6E /* LocationClass.swift in Sources */,
 				BC2296DD2009316000C0A48F /* EditItemViewController.swift in Sources */,
 				BC8BE1502008232F007FA7FD /* WeekClass.swift in Sources */,
