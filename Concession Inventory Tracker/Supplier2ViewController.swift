@@ -15,12 +15,15 @@ class Supplier2ViewController: UIViewController, UITableViewDelegate, UITableVie
 
     let DH = DataHandler.standard
     let supInt = 1
+    var catTitle = "Food"
+    var supPhoneNum = ""
+    var supOrderNum = ""
     @IBOutlet weak var tblView2: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.title = "Food"
+        navBar.title = catTitle
         // Do any additional setup after loading the view.
     }
     
@@ -32,6 +35,34 @@ class Supplier2ViewController: UIViewController, UITableViewDelegate, UITableVie
         performSegue(withIdentifier: "addItem", sender: self)
     }
     
+    @IBAction func changeInfoButton(_ sender: Any) {
+        let alert = UIAlertController(title: "Info", message: "Edit Category Title, PhoneNum and Order Number", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.text = self.catTitle
+        }
+        
+        alert.addTextField { (textField) in
+            textField.text = self.supPhoneNum
+        }
+        alert.addTextField { (textField) in
+            textField.text = self.supOrderNum
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            if let textField0 = alert?.textFields![0], let textFieldTxt0 = textField0.text {
+                self.catTitle = textFieldTxt0
+            }
+            if let textField1 = alert?.textFields![1], let textFieldTxt1 = textField1.text{
+                self.supPhoneNum = textFieldTxt1
+            }
+            if let textField2 = alert?.textFields![2], let textFieldTxt2 = textField2.text{
+                self.supOrderNum = textFieldTxt2
+            }
+            self.navigationController?.tabBarItem.title = self.catTitle
+            self.navBar.title = self.catTitle
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DH.data[DH.selectedWeek].supplierArray[supInt].itemArray.count
     }

@@ -15,19 +15,51 @@ class Supplier3ViewController: UIViewController, UITableViewDelegate, UITableVie
 
     let DH = DataHandler.standard
     let supInt = 2
+    var catTitle = "Candy"
+    var supPhoneNum = ""
+    var supOrderNum = ""
     @IBOutlet weak var tblView3: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navBar.title = "Candy"
+        navBar.title = catTitle
         // Do any additional setup after loading the view.
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.navigationController?.tabBarItem.title = catTitle
         tblView3.reloadData()
+    }
+    
+    @IBAction func changeInfoBtn(_ sender: Any) {
+        let alert = UIAlertController(title: "Info", message: "Edit Category Title, PhoneNum and Order Number", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.text = self.catTitle
+        }
+        
+        alert.addTextField { (textField) in
+            textField.text = self.supPhoneNum
+        }
+        alert.addTextField { (textField) in
+            textField.text = self.supOrderNum
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            if let textField0 = alert?.textFields![0], let textFieldTxt0 = textField0.text {
+                self.catTitle = textFieldTxt0
+            }
+            if let textField1 = alert?.textFields![1], let textFieldTxt1 = textField1.text{
+                self.supPhoneNum = textFieldTxt1
+            }
+            if let textField2 = alert?.textFields![2], let textFieldTxt2 = textField2.text{
+                self.supOrderNum = textFieldTxt2
+            }
+            self.navigationController?.tabBarItem.title = self.catTitle
+            self.navBar.title = self.catTitle
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

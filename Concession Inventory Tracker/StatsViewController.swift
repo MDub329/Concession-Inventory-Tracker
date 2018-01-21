@@ -7,7 +7,6 @@
 //
 //To:DO
 //Header is overlapping
-//commit changes to order textview on cell
 //Done button to Keyobard?
 
 import UIKit
@@ -77,11 +76,15 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return 3
     }
     
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let v = UIView()
-        v.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        let segmentedControl = UISegmentedControl(frame: CGRect(x: 10, y: 5, width: tableView.frame.width - 20, height: 30))
+    func tableView(_ tableView: UITableView,
+                            heightForHeaderInSection section: Int) -> CGFloat{
+        return 34
+    }
+
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView,
+                   forSection section: Int){
+        view.frame = CGRect(x: 10, y: 0, width: tableView.frame.width, height: 30)
+        let segmentedControl = UISegmentedControl(frame: CGRect(x: 10, y: 2, width: tableView.frame.width - 20, height: 30))
         if section == 0{
             segmentedControl.insertSegment(withTitle: "Drinks", at: 0, animated: false)
         } else if section == 1{
@@ -93,9 +96,30 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         segmentedControl.insertSegment(withTitle: "Inv Q", at: 2, animated: false)
         segmentedControl.insertSegment(withTitle: "Order", at: 3, animated: false)
         segmentedControl.insertSegment(withTitle: "Order Sug", at: 4, animated: false)
-        v.addSubview(segmentedControl)
-        return v
+        
+        view.addSubview(segmentedControl)
     }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let v = UIView(frame: CGRect(x: 10, y: 0, width: tableView.frame.width, height: 30))
+//
+//        v.backgroundColor = #colorLiteral(red: 0.7233663201, green: 0.7233663201, blue: 0.7233663201, alpha: 1)
+//        let segmentedControl = UISegmentedControl(frame: CGRect(x: 10, y: 2, width: tableView.frame.width - 20, height: 30))
+//        if section == 0{
+//            segmentedControl.insertSegment(withTitle: "Drinks", at: 0, animated: false)
+//        } else if section == 1{
+//            segmentedControl.insertSegment(withTitle: "Food", at: 0, animated: false)
+//        } else{
+//            segmentedControl.insertSegment(withTitle: "Candy", at: 0, animated: false)
+//        }
+//        segmentedControl.insertSegment(withTitle: "Prev Sold", at: 1, animated: false)
+//        segmentedControl.insertSegment(withTitle: "Inv Q", at: 2, animated: false)
+//        segmentedControl.insertSegment(withTitle: "Order", at: 3, animated: false)
+//        segmentedControl.insertSegment(withTitle: "Order Sug", at: 4, animated: false)
+//
+//        v.addSubview(segmentedControl)
+//        return v
+//    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         supInt = indexPath.section
         performSegue(withIdentifier: "displayItem", sender: self)
