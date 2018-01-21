@@ -18,6 +18,7 @@ class Week {
         supplierArray.append(Supplier(comp: .coke))
         supplierArray.append(Supplier(comp: .graves))
         supplierArray.append(Supplier(comp: .feericks))
+        supplierArray.append(Supplier(comp: .defaultSup))
     }
 //    func ToString() -> String{
 //        return

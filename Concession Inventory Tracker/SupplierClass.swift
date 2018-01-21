@@ -31,7 +31,7 @@ class Supplier{
             GraveDefaults()
             break
         case .defaultSup:
-            
+            itemArray.append(Item(name1: "Place Holder", caseQuan: 0, sup: 3, ind: itemArray.count))
             break
         }
     }
