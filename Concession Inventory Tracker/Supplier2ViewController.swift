@@ -84,8 +84,8 @@ class Supplier2ViewController: UIViewController, UITableViewDelegate, UITableVie
                 for week in self.DH.data{
                     week.supplierArray[self.supInt].itemArray.remove(at: indexPath.row)
                 }
-                //self.DH.blankWeek.supplierArray[self.supInt].itemArray.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                //self.DH.blankWeek.supplierArray[self.supInt].itemArray.remove(at: indexPath.row)
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
                 

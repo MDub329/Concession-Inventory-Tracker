@@ -376,7 +376,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="vT1-KJ-oEa"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oTc-QJ-gJl"/>
+                    <navigationItem key="navigationItem" id="oTc-QJ-gJl">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="Evs-1o-SjG">
+                            <connections>
+                                <action selector="nextButtonTap:" destination="rgx-Ky-6iz" id="aNq-d2-BvQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="avgSoldField" destination="azX-Zp-qaN" id="v9v-kA-552"/>
                         <outlet property="avgSoldLabel" destination="Q8N-jx-yI0" id="Rdd-l0-szO"/>

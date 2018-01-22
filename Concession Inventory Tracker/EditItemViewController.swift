@@ -132,30 +132,56 @@ class EditItemViewController: UIViewController {
         }
         navBar.title = navBStr
     }
+
+    @IBAction func nextButtonTap(_ sender: Any) {
+        if DH.data[DH.selectedWeek].supplierArray[item.supplier].itemArray.count >= item.index + 2{
+            saveData()
+            let newitemRef = DH.data[DH.selectedWeek].supplierArray[item.supplier].itemArray[item.index + 1]
+            item = newitemRef
+            viewDidLoad()
+        } else{
+            let alert = UIAlertController(title: "Error", message: "No more Items", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
     
     func saveData(){
         if let name = nameField.text, !name.isEmpty {
             for week in DH.data{
                 week.supplierArray[item.supplier].itemArray[item.index].name = nameField.text!
             }
-            DH.blankWeek.supplierArray[item.supplier].itemArray[item.index].name = nameField.text!
+            //DH.blankWeek.supplierArray[item.supplier].itemArray[item.index].name = nameField.text!
         }
         if let text = caseQField.text, let caseQuan = Int(text), !text.isEmpty {
-            //do something if it's not empty
             for week in DH.data{
                 week.supplierArray[item.supplier].itemArray[item.index].caseQuantity = caseQuan
             }
-            DH.blankWeek.supplierArray[item.supplier].itemArray[item.index].caseQuantity = caseQuan
+            //DH.blankWeek.supplierArray[item.supplier].itemArray[item.index].caseQuantity = caseQuan
         }
         if !(invQField.text?.isEmpty)!{
             item.inventoryQuantity = Int(invQField.text!)!
-        }else{
-            item.inventoryQuantity = 50000
         }
         if !(specSold.text!.isEmpty){
             item.sold = Int(specSold.text!)!
         }
-        
+        if !(moveField.text!.isEmpty){
+            item.moved = Int(moveField.text!)!
+        }
+        if !(orderField.text!.isEmpty){
+            item.actualOrder = Int(orderField.text!)!
+        }
+        if !(orderSugField.text!.isEmpty){
+            item.orderSugestion = Int(orderSugField.text!)!
+        }
+        if !(soldField.text!.isEmpty){
+            item.sold = Int(soldField.text!)!
+        }
+        if !(bufferField.text!.isEmpty){
+            item.buffer = Int(bufferField.text!)!
+        }
+      
         
     }
 }

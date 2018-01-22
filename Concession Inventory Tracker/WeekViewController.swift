@@ -30,9 +30,8 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func addWeekButtonTap(_ sender: Any) {
         let dataCount = DH.data.count
         if DH.data[dataCount-1].finInv == false{
-            let newWeek = DH.blankWeek
-            //let newWeek = Week()
-            //newWeek.weekNum = dataCount
+            //let newWeek = DH.blankWeek
+            let newWeek = Week()
             DH.data.append(newWeek)
             let str = String(dataCount)
             pvDataSource.append("Week " + str )
@@ -48,7 +47,9 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func finInvButtonTap(_ sender: Any) {
         let dataCount = DH.data.count
         if DH.data[dataCount-1].finInv == false{
-                DH.data.append(Week())
+                //let newWeek = DH.blankWeek
+                let newWeek = Week()
+                DH.data.append(newWeek)
                 DH.data[dataCount].finInv = true
                 pvDataSource.append("Final Inventory" )
                 pickView.delegate = self
@@ -109,6 +110,6 @@ class DataHandler{
     static let standard = DataHandler()
     var data = [Week]()
     var selectedWeek = 0
-    var blankWeek = Week()
+    //var blankWeek = Week()
 }
 
