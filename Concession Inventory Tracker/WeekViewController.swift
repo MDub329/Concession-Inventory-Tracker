@@ -30,7 +30,7 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func addWeekButtonTap(_ sender: Any) {
         let dataCount = DH.data.count
         if DH.data[dataCount-1].finInv == false{
-            //let newWeek = DH.blankWeek
+            //let newWeekj = 
             let newWeek = Week()
             DH.data.append(newWeek)
             let str = String(dataCount)

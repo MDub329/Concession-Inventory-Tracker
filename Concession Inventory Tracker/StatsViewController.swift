@@ -13,8 +13,10 @@ import UIKit
 
 class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
+    @IBOutlet weak var tblViewStats: UITableView!
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
+    var test123 = true
     var supInt = 1000
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,17 +29,13 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             navBStr = "Week " + String(DH.selectedWeek)
         }
         navBar.title = navBStr
-        tblView.estimatedSectionHeaderHeight = 40.0
-        // Set a header for the table view
-        let header = UIView(frame: CGRect(x: 0, y: 0, width: tblView.frame.width, height: 75))
-        tblView.tableHeaderView = header
-        // Do any additional setup after loading the view.
         self.hideKeyboardWhenTappedAround()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         var navBStr = ""
         if DH.selectedWeek == 0{
             navBStr = "Starting Inventory"
@@ -47,8 +45,9 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             navBStr = "Week " + String(DH.selectedWeek)
         }
         navBar.title = navBStr
-        tblView.reloadData()
+        tblViewStats.reloadData()
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let itemCount = DH.data[DH.selectedWeek].supplierArray[section].itemArray.count
         return itemCount
@@ -73,53 +72,53 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView,
                             heightForHeaderInSection section: Int) -> CGFloat{
         return 34
     }
-
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView,
-                   forSection section: Int){
-        view.frame = CGRect(x: 10, y: 0, width: tableView.frame.width, height: 30)
-        let segmentedControl = UISegmentedControl(frame: CGRect(x: 10, y: 2, width: tableView.frame.width - 20, height: 30))
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var str = ""
         if section == 0{
-            segmentedControl.insertSegment(withTitle: "Drinks", at: 0, animated: false)
+            str = "Drinks"
         } else if section == 1{
-            segmentedControl.insertSegment(withTitle: "Food", at: 0, animated: false)
+            str = "Food"
+        }else if section == 2{
+            str = "Candy"
         } else{
-            segmentedControl.insertSegment(withTitle: "Candy", at: 0, animated: false)
+            str = "Misc"
         }
-        segmentedControl.insertSegment(withTitle: "Prev Sold", at: 1, animated: false)
-        segmentedControl.insertSegment(withTitle: "Inv Q", at: 2, animated: false)
-        segmentedControl.insertSegment(withTitle: "Order", at: 3, animated: false)
-        segmentedControl.insertSegment(withTitle: "Order Sug", at: 4, animated: false)
-        
-        view.addSubview(segmentedControl)
+        return str + "   Prev Sold   Inv Q      Order      Sug"
     }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let v = UIView(frame: CGRect(x: 10, y: 0, width: tableView.frame.width, height: 30))
+
+//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView,
+//                   forSection section: Int){
 //
-//        v.backgroundColor = #colorLiteral(red: 0.7233663201, green: 0.7233663201, blue: 0.7233663201, alpha: 1)
-//        let segmentedControl = UISegmentedControl(frame: CGRect(x: 10, y: 2, width: tableView.frame.width - 20, height: 30))
-//        if section == 0{
-//            segmentedControl.insertSegment(withTitle: "Drinks", at: 0, animated: false)
-//        } else if section == 1{
-//            segmentedControl.insertSegment(withTitle: "Food", at: 0, animated: false)
-//        } else{
-//            segmentedControl.insertSegment(withTitle: "Candy", at: 0, animated: false)
+//        if view.subviews.count < 3{
+//            view.frame = CGRect(x: 10, y: 0, width: tableView.frame.width, height: 30)
+//            let segmentedControl = UISegmentedControl(frame: CGRect(x: 10, y: 2, width: tableView.frame.width - 20, height: 30))
+//            if section == 0{
+//                segmentedControl.insertSegment(withTitle: "Drinks", at: 0, animated: false)
+//            } else if section == 1{
+//                segmentedControl.insertSegment(withTitle: "Food", at: 0, animated: false)
+//            } else if section == 2{
+//                segmentedControl.insertSegment(withTitle: "Candy", at: 0, animated: false)
+//            }
+//            segmentedControl.insertSegment(withTitle: "Prev Sold", at: 1, animated: false)
+//            segmentedControl.insertSegment(withTitle: "Inv Q", at: 2, animated: false)
+//            segmentedControl.insertSegment(withTitle: "Order", at: 3, animated: false)
+//            segmentedControl.insertSegment(withTitle: "Order Sug", at: 4, animated: false)
+//
+//            
+//            view.addSubview(segmentedControl)
 //        }
-//        segmentedControl.insertSegment(withTitle: "Prev Sold", at: 1, animated: false)
-//        segmentedControl.insertSegment(withTitle: "Inv Q", at: 2, animated: false)
-//        segmentedControl.insertSegment(withTitle: "Order", at: 3, animated: false)
-//        segmentedControl.insertSegment(withTitle: "Order Sug", at: 4, animated: false)
 //
-//        v.addSubview(segmentedControl)
-//        return v
+//
 //    }
+//
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         supInt = indexPath.section
         performSegue(withIdentifier: "displayItem", sender: self)
@@ -131,7 +130,6 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
     }
-    
    
 }
 
@@ -148,7 +146,7 @@ class tableViewCell: UITableViewCell, UITextFieldDelegate{
     override func awakeFromNib() {
         orderField.delegate = self
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let order = orderField.text, let orderInt = Int(order){
             itemPassed?.actualOrder = orderInt

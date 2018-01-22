@@ -439,7 +439,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7X-dh-NKz">
-                                                    <rect key="frame" x="329" y="12" width="25" height="20"/>
+                                                    <rect key="frame" x="315" y="12" width="25" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -453,14 +453,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ho7-3V-IQV">
-                                                    <rect key="frame" x="245" y="7" width="44" height="30"/>
+                                                    <rect key="frame" x="235" y="7" width="44" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stT-TL-cYM">
-                                                    <rect key="frame" x="175" y="11" width="25" height="20"/>
+                                                    <rect key="frame" x="178" y="11" width="25" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -491,6 +491,7 @@
                     <connections>
                         <outlet property="navBar" destination="PNT-XZ-cQL" id="wdZ-IN-mkm"/>
                         <outlet property="tblView" destination="eHG-V2-8es" id="XsR-3Y-aHh"/>
+                        <outlet property="tblViewStats" destination="eHG-V2-8es" id="7Xc-zp-ORp"/>
                         <segue destination="eLX-Nz-sU8" kind="show" identifier="displayItem" id="2uW-a4-GOY"/>
                     </connections>
                 </viewController>
