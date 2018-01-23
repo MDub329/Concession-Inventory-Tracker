@@ -12,7 +12,7 @@ import UIKit
 
 class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-
+    
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var pickView: UIPickerView!
     var pvDataSource = ["Starting Inventory", "Week 1"]
@@ -39,7 +39,7 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             pickView.delegate = self
             pickView.dataSource = self
         } else{
-           let alert = UIAlertController(title: "Error", message: "Final Inventory already selected", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Error", message: "Final Inventory already selected", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
@@ -48,18 +48,18 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBAction func finInvButtonTap(_ sender: Any) {
         let dataCount = DH.data.count
         if DH.data[dataCount-1].finInv == false{
-                //let newWeek = DH.blankWeek
-                let newWeek = Week()
-                DH.data.append(newWeek)
-                DH.data[dataCount].finInv = true
-                pvDataSource.append("Final Inventory" )
-                pickView.delegate = self
-                pickView.dataSource = self
-            } else{
-                let alert = UIAlertController(title: "Error", message: "Final Inventory already selected", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
+            //let newWeek = DH.blankWeek
+            let newWeek = Week()
+            DH.data.append(newWeek)
+            DH.data[dataCount].finInv = true
+            pvDataSource.append("Final Inventory" )
+            pickView.delegate = self
+            pickView.dataSource = self
+        } else{
+            let alert = UIAlertController(title: "Error", message: "Final Inventory already selected", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     @IBAction func undoAddWeelButtonTap(_ sender: Any) {
         let dataCountIndex = DH.data.count - 1
@@ -93,13 +93,13 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         DH.selectedWeek = row
     }
-
+    
     
     func setUpNavBarButton() {
         let moreButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.organize, target: self, action: #selector(handleMore))
         navBar.leftBarButtonItem = moreButton
     }
-
+    
     let settingsLauncher = SettingsLauncher()
     
     @objc func handleMore() {
