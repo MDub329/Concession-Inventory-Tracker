@@ -14,10 +14,10 @@ import UIKit
 class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     @IBOutlet weak var tblViewStats: UITableView!
-    @IBOutlet weak var tblView: UITableView!
+    //@IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
     var test123 = true
-    var supInt = 1000
+    //var supInt = 1000
     override func viewDidLoad() {
         super.viewDidLoad()
         var navBStr = ""
@@ -66,7 +66,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             cell.prevSoldLbl.text = "N/A"
         } else{
             let prevWeek = DH.data[DH.selectedWeek-1].supplierArray[indexPath.section].itemArray[indexPath.row]
-            cell.prevSoldLbl.text = String(prevWeek.sold)//doesnt work
+            cell.prevSoldLbl.text = String(prevWeek.sold)
         }
         return cell
     }
@@ -79,20 +79,27 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
                             heightForHeaderInSection section: Int) -> CGFloat{
         return 34
     }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        var str = ""
-        if section == 0{
-            str = "Drinks"
-        } else if section == 1{
-            str = "Food"
-        }else if section == 2{
-            str = "Candy"
-        } else{
-            str = "Misc"
-        }
-        return str + "   Prev Sold   Inv Q      Order      Sug"
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        var str = ""
+//        if section == 0{
+//            str = "Drinks"
+//        } else if section == 1{
+//            str = "Food"
+//        }else if section == 2{
+//            str = "Candy"
+//        } else{
+//            str = "Misc"
+//        }
+//        return str + "   Prev Sold   Inv Q      Order      Sug"
+//    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {//Create headerView
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        
+        label.text = "test"
+        view.addSubview(label)
+        return view
     }
-
 //    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView,
 //                   forSection section: Int){
 //
@@ -120,15 +127,14 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        supInt = indexPath.section
+       // supInt = indexPath.section
         performSegue(withIdentifier: "displayItem", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? DisplayItemViewController{
-            destination.item = DH.data[DH.selectedWeek].supplierArray[supInt].itemArray[(tblView.indexPathForSelectedRow?.row)!]
+        if let destination = segue.destination as? EditItemViewController{
+            destination.item = DH.data[DH.selectedWeek].supplierArray[(tblViewStats.indexPathForSelectedRow?.section)!].itemArray[(tblViewStats.indexPathForSelectedRow?.row)!]
         }
-        
     }
    
 }

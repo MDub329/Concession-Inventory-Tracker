@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0BE2552016C9F900B6DC72 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0BE2542016C9F900B6DC72 /* SettingsLauncher.swift */; };
 		BC2296DD2009316000C0A48F /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2296DC2009316000C0A48F /* EditItemViewController.swift */; };
 		BC2296DF2009A80B00C0A48F /* CalcFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2296DE2009A80B00C0A48F /* CalcFunctions.swift */; };
 		BC8BE11E20081075007FA7FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BE11D20081075007FA7FD /* AppDelegate.swift */; };
@@ -24,11 +25,11 @@
 		BCA9A11A2013D1E200A2836B /* LocationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA9A1192013D1E200A2836B /* LocationClass.swift */; };
 		BCA9A11C2013D1E400A2836B /* SupplierClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA9A11B2013D1E400A2836B /* SupplierClass.swift */; };
 		BCA9A11E2013D1E600A2836B /* WeekClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA9A11D2013D1E600A2836B /* WeekClass.swift */; };
-		BCB4C881200D66B200C748A3 /* DisplayItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4C880200D66B200C748A3 /* DisplayItemViewController.swift */; };
 		BCC765CD201441620060FEDA /* Supplier4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC765CC201441620060FEDA /* Supplier4ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC0BE2542016C9F900B6DC72 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
 		BC2296DC2009316000C0A48F /* EditItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 		BC2296DE2009A80B00C0A48F /* CalcFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcFunctions.swift; sourceTree = "<group>"; };
 		BC8BE11A20081075007FA7FD /* Concession Inventory Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Concession Inventory Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +49,6 @@
 		BCA9A1192013D1E200A2836B /* LocationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClass.swift; sourceTree = "<group>"; };
 		BCA9A11B2013D1E400A2836B /* SupplierClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplierClass.swift; sourceTree = "<group>"; };
 		BCA9A11D2013D1E600A2836B /* WeekClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekClass.swift; sourceTree = "<group>"; };
-		BCB4C880200D66B200C748A3 /* DisplayItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayItemViewController.swift; sourceTree = "<group>"; };
 		BCC765CC201441620060FEDA /* Supplier4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supplier4ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +63,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC0BE2512016C95900B6DC72 /* Class Objects */ = {
+			isa = PBXGroup;
+			children = (
+				BCA9A11D2013D1E600A2836B /* WeekClass.swift */,
+				BCA9A11B2013D1E400A2836B /* SupplierClass.swift */,
+				BCA9A1192013D1E200A2836B /* LocationClass.swift */,
+				BCA9A1172013D1E100A2836B /* ItemClass.swift */,
+			);
+			path = "Class Objects";
+			sourceTree = "<group>";
+		};
+		BC0BE2522016C99A00B6DC72 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC8BE11F20081075007FA7FD /* WeekViewController.swift */,
+				BC8BE15120082355007FA7FD /* Supplier1ViewController.swift */,
+				BC8BE15320082362007FA7FD /* Supplier2ViewController.swift */,
+				BC8BE1552008236B007FA7FD /* Supplier3ViewController.swift */,
+				BCC765CC201441620060FEDA /* Supplier4ViewController.swift */,
+				BC8E9552200B111C00B4C4C8 /* StatsViewController.swift */,
+				BC2296DC2009316000C0A48F /* EditItemViewController.swift */,
+				BC8E9554200C1BDD00B4C4C8 /* AddItemViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BC0BE2532016C9D600B6DC72 /* Functions & Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BC0BE2542016C9F900B6DC72 /* SettingsLauncher.swift */,
+				BC2296DE2009A80B00C0A48F /* CalcFunctions.swift */,
+				BCA9A1112012C6BF00A2836B /* OtherFunctions.swift */,
+			);
+			path = "Functions & Settings";
+			sourceTree = "<group>";
+		};
 		BC8BE11120081075007FA7FD = {
 			isa = PBXGroup;
 			children = (
@@ -82,26 +118,14 @@
 		BC8BE11C20081075007FA7FD /* Concession Inventory Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				BC0BE2512016C95900B6DC72 /* Class Objects */,
+				BC0BE2522016C99A00B6DC72 /* Controllers */,
 				BC8BE11D20081075007FA7FD /* AppDelegate.swift */,
-				BC8BE11F20081075007FA7FD /* WeekViewController.swift */,
-				BC8BE15120082355007FA7FD /* Supplier1ViewController.swift */,
-				BC8BE15320082362007FA7FD /* Supplier2ViewController.swift */,
-				BC8BE1552008236B007FA7FD /* Supplier3ViewController.swift */,
-				BCC765CC201441620060FEDA /* Supplier4ViewController.swift */,
-				BC8E9552200B111C00B4C4C8 /* StatsViewController.swift */,
-				BC2296DC2009316000C0A48F /* EditItemViewController.swift */,
-				BC8E9554200C1BDD00B4C4C8 /* AddItemViewController.swift */,
-				BCB4C880200D66B200C748A3 /* DisplayItemViewController.swift */,
 				BC8BE12120081075007FA7FD /* Main.storyboard */,
 				BC8BE12420081075007FA7FD /* Assets.xcassets */,
 				BC8BE12620081075007FA7FD /* LaunchScreen.storyboard */,
+				BC0BE2532016C9D600B6DC72 /* Functions & Settings */,
 				BC8BE12920081075007FA7FD /* Info.plist */,
-				BCA9A1172013D1E100A2836B /* ItemClass.swift */,
-				BCA9A1192013D1E200A2836B /* LocationClass.swift */,
-				BCA9A11B2013D1E400A2836B /* SupplierClass.swift */,
-				BCA9A11D2013D1E600A2836B /* WeekClass.swift */,
-				BC2296DE2009A80B00C0A48F /* CalcFunctions.swift */,
-				BCA9A1112012C6BF00A2836B /* OtherFunctions.swift */,
 			);
 			path = "Concession Inventory Tracker";
 			sourceTree = "<group>";
@@ -182,10 +206,10 @@
 				BC8E9553200B111C00B4C4C8 /* StatsViewController.swift in Sources */,
 				BCA9A11E2013D1E600A2836B /* WeekClass.swift in Sources */,
 				BCA9A11C2013D1E400A2836B /* SupplierClass.swift in Sources */,
+				BC0BE2552016C9F900B6DC72 /* SettingsLauncher.swift in Sources */,
 				BC8BE15420082362007FA7FD /* Supplier2ViewController.swift in Sources */,
 				BC8BE12020081075007FA7FD /* WeekViewController.swift in Sources */,
 				BC8E9555200C1BDD00B4C4C8 /* AddItemViewController.swift in Sources */,
-				BCB4C881200D66B200C748A3 /* DisplayItemViewController.swift in Sources */,
 				BCA9A1122012C6BF00A2836B /* OtherFunctions.swift in Sources */,
 				BCA9A1182013D1E100A2836B /* ItemClass.swift in Sources */,
 				BC2296DD2009316000C0A48F /* EditItemViewController.swift in Sources */,

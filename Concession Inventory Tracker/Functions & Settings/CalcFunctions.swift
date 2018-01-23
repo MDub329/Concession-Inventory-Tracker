@@ -15,8 +15,7 @@ func CalcSold(sup: Int, item: Int) -> Int{
 
    if DH.selectedWeek != DH.data.count-1{
         let curWeek = DH.data[DH.selectedWeek].supplierArray[sup].itemArray[item]
-        let nextWeek = DH.data[DH.selectedWeek + 1].supplierArray[sup].itemArray[item] // out of range if it is the last week in array
-        
+        let nextWeek = DH.data[DH.selectedWeek + 1].supplierArray[sup].itemArray[item] 
         if curWeek.countByCase == true{
             sold = curWeek.inventoryQuantity + curWeek.actualOrder + curWeek.moved - nextWeek.inventoryQuantity
         } else{

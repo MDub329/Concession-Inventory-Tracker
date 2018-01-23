@@ -13,13 +13,14 @@ import UIKit
 class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
 
-    @IBOutlet weak var lbltest: UILabel!
+    @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var pickView: UIPickerView!
     var pvDataSource = ["Starting Inventory", "Week 1"]
     let DH = DataHandler.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpNavBarButton()
         // Do any additional setup after loading the view, typically from a nib.
         pickView.delegate = self
         pickView.dataSource = self
@@ -70,10 +71,11 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             DH.data[dataCountIndex].finInv = false
             pvDataSource.remove(at: dataCountIndex )
             DH.data.remove(at: dataCountIndex)
-            pickView.delegate = self
-            pickView.dataSource = self
             let DC = dataCountIndex - 1
             pickView.selectRow(DC, inComponent: 0, animated: false)
+            DH.selectedWeek = DC
+            pickView.delegate = self
+            pickView.dataSource = self
         }
     }
     
@@ -92,7 +94,21 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         DH.selectedWeek = row
     }
 
+    
+    func setUpNavBarButton() {
+        let moreButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.organize, target: self, action: #selector(handleMore))
+        navBar.leftBarButtonItem = moreButton
+    }
+
+    let settingsLauncher = SettingsLauncher()
+    
+    @objc func handleMore() {
+        settingsLauncher.showSettings()
+    }
+    
+    
 }
+
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
