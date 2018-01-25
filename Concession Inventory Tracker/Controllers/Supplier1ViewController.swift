@@ -12,7 +12,7 @@ import UIKit
 
 class Supplier1ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
+    
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var tblView: UITableView!
     var catTitle = "Drinks"
@@ -23,15 +23,14 @@ class Supplier1ViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.title = catTitle
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        setStrings()
         tblView.reloadData()
     }
-
+    
     @IBAction func changeInfoButton(_ sender: Any) {
         let alert = UIAlertController(title: "Info", message: "Edit Category Title, PhoneNum and Order Number", preferredStyle: .alert)
         alert.addTextField { (textField) in
@@ -54,8 +53,8 @@ class Supplier1ViewController: UIViewController, UITableViewDelegate, UITableVie
             if let textField2 = alert?.textFields![2], let textFieldTxt2 = textField2.text{
                 self.supOrderNum = textFieldTxt2
             }
-            self.navigationController?.tabBarItem.title = self.catTitle
-            self.navBar.title = self.catTitle
+            self.saveStrings()
+            self.setStrings()
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -65,7 +64,7 @@ class Supplier1ViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
-            cell.textLabel?.text = DH.data[DH.selectedWeek].supplierArray[supInt].itemArray[indexPath.row].name
+        cell.textLabel?.text = DH.data[DH.selectedWeek].supplierArray[supInt].itemArray[indexPath.row].name
         return cell
     }
     
@@ -76,22 +75,36 @@ class Supplier1ViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             let alert = UIAlertController(title: "Delete", message: "Are you sure you want to Delete?", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                    for week in self.DH.data{
-                        week.supplierArray[self.supInt].itemArray.remove(at: indexPath.row)
-                    }
-                    //self.DH.blankWeek.supplierArray[self.supInt].itemArray.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-                    
-                }))
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                for week in self.DH.data{
+                    week.supplierArray[self.supInt].itemArray.remove(at: indexPath.row)
+                }
+                //self.DH.blankWeek.supplierArray[self.supInt].itemArray.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                
+            }))
             self.present(alert, animated: true, completion: nil)
-       }
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showDetail", sender: self)
     }
+    
+    
+//    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+//
+//    }
+//    
+//
+//    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+    
+    
+    
+    
     @IBAction func addButtonTap(_ sender: Any) {
         performSegue(withIdentifier: "addItem", sender: self)
     }
@@ -108,5 +121,26 @@ class Supplier1ViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-
+    
+    func saveStrings() {
+        UserDefaults.standard.set(self.catTitle, forKey: "CatTitle")
+        UserDefaults.standard.set(self.supPhoneNum, forKey: "PhoneTitle")
+        UserDefaults.standard.set(self.supOrderNum, forKey: "OrderTitle")
+    }
+    
+    func setStrings(){
+        if let cTitle = UserDefaults.standard.string(forKey: "CatTitle"){
+            catTitle = cTitle
+        }
+        if let pTitle = UserDefaults.standard.string(forKey: "PhoneTitle"){
+            supPhoneNum = pTitle
+        }
+        if let oTitle = UserDefaults.standard.string(forKey: "OrderTitle"){
+            supOrderNum = oTitle
+        }
+        
+        navigationController?.tabBarItem.title = self.catTitle
+        navBar.title = self.catTitle
+    }
+    
 }

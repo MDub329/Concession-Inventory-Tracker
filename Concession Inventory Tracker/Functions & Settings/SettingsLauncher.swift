@@ -8,11 +8,7 @@
 
 import UIKit
 
-class SettingsLauncher: NSObject{
-    override init() {
-        super.init()
-        //
-    }
+class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     let blackView = UIView()
     
@@ -22,6 +18,8 @@ class SettingsLauncher: NSObject{
         cv.backgroundColor = #colorLiteral(red: 0.7233663201, green: 0.7233663201, blue: 0.7233663201, alpha: 1)
         return cv
     }()
+    
+    let cellId = "cellID"
     
     @objc func showSettings() {
         if let window = UIApplication.shared.keyWindow {
@@ -56,4 +54,28 @@ class SettingsLauncher: NSObject{
             
         })
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 50)
+    }
+    
+    override init() {
+        super.init()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.register(SettingCell.self, forCellWithReuseIdentifier: cellId)
+    }
+    
+    
 }

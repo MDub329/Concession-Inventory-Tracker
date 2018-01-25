@@ -14,10 +14,8 @@ import UIKit
 class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     @IBOutlet weak var tblViewStats: UITableView!
-    //@IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var navBar: UINavigationItem!
-    var test123 = true
-    //var supInt = 1000
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var navBStr = ""
@@ -127,7 +125,6 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       // supInt = indexPath.section
         performSegue(withIdentifier: "displayItem", sender: self)
     }
     

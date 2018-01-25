@@ -9,7 +9,7 @@
 //Multiple Stands?
 //Fix blank Week
 import UIKit
-
+import os.log
 class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
@@ -21,11 +21,11 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavBarButton()
-        // Do any additional setup after loading the view, typically from a nib.
         pickView.delegate = self
         pickView.dataSource = self
         DH.data.append(Week())
         DH.data.append(Week())
+        
     }
     
     @IBAction func addWeekButtonTap(_ sender: Any) {
@@ -106,6 +106,7 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         settingsLauncher.showSettings()
     }
     
+  
     
 }
 
@@ -124,6 +125,7 @@ extension UIViewController {
 
 class DataHandler{
     static let standard = DataHandler()
+    //var data = UserDefaults.standard.object(forKey: "DeepData")
     var data = [Week]()
     var selectedWeek = 0
     //var blankWeek = Week()

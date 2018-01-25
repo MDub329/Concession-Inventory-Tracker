@@ -20,6 +20,7 @@
 		BC8BE1562008236B007FA7FD /* Supplier3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8BE1552008236B007FA7FD /* Supplier3ViewController.swift */; };
 		BC8E9553200B111C00B4C4C8 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E9552200B111C00B4C4C8 /* StatsViewController.swift */; };
 		BC8E9555200C1BDD00B4C4C8 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E9554200C1BDD00B4C4C8 /* AddItemViewController.swift */; };
+		BC91391E2017C0E300BEC475 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91391D2017C0E300BEC475 /* SettingCell.swift */; };
 		BCA9A1122012C6BF00A2836B /* OtherFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA9A1112012C6BF00A2836B /* OtherFunctions.swift */; };
 		BCA9A1182013D1E100A2836B /* ItemClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA9A1172013D1E100A2836B /* ItemClass.swift */; };
 		BCA9A11A2013D1E200A2836B /* LocationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA9A1192013D1E200A2836B /* LocationClass.swift */; };
@@ -44,6 +45,7 @@
 		BC8BE1552008236B007FA7FD /* Supplier3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supplier3ViewController.swift; sourceTree = "<group>"; };
 		BC8E9552200B111C00B4C4C8 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		BC8E9554200C1BDD00B4C4C8 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		BC91391D2017C0E300BEC475 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		BCA9A1112012C6BF00A2836B /* OtherFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherFunctions.swift; sourceTree = "<group>"; };
 		BCA9A1172013D1E100A2836B /* ItemClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemClass.swift; sourceTree = "<group>"; };
 		BCA9A1192013D1E200A2836B /* LocationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationClass.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				BC0BE2542016C9F900B6DC72 /* SettingsLauncher.swift */,
 				BC2296DE2009A80B00C0A48F /* CalcFunctions.swift */,
 				BCA9A1112012C6BF00A2836B /* OtherFunctions.swift */,
+				BC91391D2017C0E300BEC475 /* SettingCell.swift */,
 			);
 			path = "Functions & Settings";
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC91391E2017C0E300BEC475 /* SettingCell.swift in Sources */,
 				BC8BE15220082355007FA7FD /* Supplier1ViewController.swift in Sources */,
 				BC8E9553200B111C00B4C4C8 /* StatsViewController.swift in Sources */,
 				BCA9A11E2013D1E600A2836B /* WeekClass.swift in Sources */,

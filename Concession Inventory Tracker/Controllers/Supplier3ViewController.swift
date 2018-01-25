@@ -11,8 +11,8 @@
 import UIKit
 
 class Supplier3ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
-
+    
+    
     let DH = DataHandler.standard
     let supInt = 2
     var catTitle = "Candy"
@@ -23,13 +23,12 @@ class Supplier3ViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navBar.title = catTitle
-        // Do any additional setup after loading the view.
+        
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.tabBarItem.title = catTitle
+        setStrings()
         tblView3.reloadData()
     }
     
@@ -56,8 +55,9 @@ class Supplier3ViewController: UIViewController, UITableViewDelegate, UITableVie
             if let textField2 = alert?.textFields![2], let textFieldTxt2 = textField2.text{
                 self.supOrderNum = textFieldTxt2
             }
-            self.navigationController?.tabBarItem.title = self.catTitle
-            self.navBar.title = self.catTitle
+            self.saveStrings()
+            self.setStrings()
+
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -97,7 +97,7 @@ class Supplier3ViewController: UIViewController, UITableViewDelegate, UITableVie
         performSegue(withIdentifier: "showDetail", sender: self)
     }
     
-   
+    
     @IBAction func addButtonTap(_ sender: Any) {
         performSegue(withIdentifier: "addItem", sender: self)
     }
@@ -113,5 +113,26 @@ class Supplier3ViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    
+    func saveStrings() {
+        UserDefaults.standard.set(self.catTitle, forKey: "CatTitle")
+        UserDefaults.standard.set(self.supPhoneNum, forKey: "PhoneTitle")
+        UserDefaults.standard.set(self.supOrderNum, forKey: "OrderTitle")
+    }
+    
+    func setStrings(){
+        if let cTitle = UserDefaults.standard.string(forKey: "CatTitle"){
+            catTitle = cTitle
+        }
+        if let pTitle = UserDefaults.standard.string(forKey: "PhoneTitle"){
+            supPhoneNum = pTitle
+        }
+        if let oTitle = UserDefaults.standard.string(forKey: "OrderTitle"){
+            supOrderNum = oTitle
+        }
+        
+        navigationController?.tabBarItem.title = self.catTitle
+        navBar.title = self.catTitle
+    }
     
 }
