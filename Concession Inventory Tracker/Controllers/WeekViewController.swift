@@ -128,6 +128,7 @@ class DataHandler{
     //var data = UserDefaults.standard.object(forKey: "DeepData")
     var data = [Week]()
     var selectedWeek = 0
+    var selectedStand = 0
     //var blankWeek = Week()
 }
 

@@ -552,7 +552,7 @@
         <!--Supplier1 View Controller-->
         <scene sceneID="mbw-3p-oND">
             <objects>
-                <viewController id="WD3-LE-qOU" customClass="Supplier1ViewController" customModule="Concession_Inventory_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Sup1VC" id="WD3-LE-qOU" customClass="Supplier1ViewController" customModule="Concession_Inventory_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hq2-2C-ldw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -890,7 +890,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YJz-Up-pag"/>
-        <segue reference="8jz-sA-QbW"/>
+        <segue reference="Mz6-Hj-UGU"/>
+        <segue reference="IKh-7i-IFt"/>
     </inferredMetricsTieBreakers>
 </document>

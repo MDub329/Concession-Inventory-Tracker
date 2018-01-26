@@ -19,6 +19,7 @@ class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewData
         return cv
     }()
     
+    
     let cellId = "cellID"
     
     @objc func showSettings() {
@@ -61,12 +62,43 @@ class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 50)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        UIView.animate(withDuration: 0.1, animations: {
+            cell?.backgroundColor = #colorLiteral(red: 0.7233663201, green: 0.7233663201, blue: 0.7233663201, alpha: 1)
+        })
+        DH.selectedStand = indexPath.row
+        
+        if indexPath.row == indexPath.count{
+            let alert = UIAlertController(title: "Delete", message: "Are you sure you want to Delete?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                
+            }))
+            //WeekViewController.present(alert, animated: true, completion: nil)
+        }
+        
+        
+        
+        handleDismiss()
+        
+        
+        
+        
+        
+        
+//        UIView.animate(withDuration: 0.7, animations: {
+//            cell?.backgroundColor = #colorLiteral(red: 0.9759812116, green: 1, blue: 0.983512733, alpha: 1)
+//        })
     }
     
     override init() {

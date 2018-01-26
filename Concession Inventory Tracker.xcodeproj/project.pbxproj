@@ -121,9 +121,9 @@
 		BC8BE11C20081075007FA7FD /* Concession Inventory Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				BC8BE11D20081075007FA7FD /* AppDelegate.swift */,
 				BC0BE2512016C95900B6DC72 /* Class Objects */,
 				BC0BE2522016C99A00B6DC72 /* Controllers */,
-				BC8BE11D20081075007FA7FD /* AppDelegate.swift */,
 				BC8BE12120081075007FA7FD /* Main.storyboard */,
 				BC8BE12420081075007FA7FD /* Assets.xcassets */,
 				BC8BE12620081075007FA7FD /* LaunchScreen.storyboard */,

@@ -115,19 +115,19 @@ class Supplier3ViewController: UIViewController, UITableViewDelegate, UITableVie
     
     
     func saveStrings() {
-        UserDefaults.standard.set(self.catTitle, forKey: "CatTitle")
-        UserDefaults.standard.set(self.supPhoneNum, forKey: "PhoneTitle")
-        UserDefaults.standard.set(self.supOrderNum, forKey: "OrderTitle")
+        UserDefaults.standard.set(self.catTitle, forKey: "CatTitle3")
+        UserDefaults.standard.set(self.supPhoneNum, forKey: "PhoneTitle3")
+        UserDefaults.standard.set(self.supOrderNum, forKey: "OrderTitle3")
     }
     
     func setStrings(){
-        if let cTitle = UserDefaults.standard.string(forKey: "CatTitle"){
+        if let cTitle = UserDefaults.standard.string(forKey: "CatTitle3"){
             catTitle = cTitle
         }
-        if let pTitle = UserDefaults.standard.string(forKey: "PhoneTitle"){
+        if let pTitle = UserDefaults.standard.string(forKey: "PhoneTitle3"){
             supPhoneNum = pTitle
         }
-        if let oTitle = UserDefaults.standard.string(forKey: "OrderTitle"){
+        if let oTitle = UserDefaults.standard.string(forKey: "OrderTitle3"){
             supOrderNum = oTitle
         }
         
