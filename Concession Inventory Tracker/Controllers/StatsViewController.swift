@@ -45,7 +45,7 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
         navBar.title = navBStr
         tblViewStats.reloadData()
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let itemCount = DH.data[DH.selectedWeek].supplierArray[section].itemArray.count
         return itemCount
@@ -74,55 +74,31 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView,
-                            heightForHeaderInSection section: Int) -> CGFloat{
-        return 34
+                   heightForHeaderInSection section: Int) -> CGFloat{
+        return 30
     }
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        var str = ""
-//        if section == 0{
-//            str = "Drinks"
-//        } else if section == 1{
-//            str = "Food"
-//        }else if section == 2{
-//            str = "Candy"
-//        } else{
-//            str = "Misc"
-//        }
-//        return str + "   Prev Sold   Inv Q      Order      Sug"
-//    }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {//Create headerView
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 30))
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         
-        label.text = "test"
-        view.addSubview(label)
+        let view = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! headerView
+        view.backgroundColor = #colorLiteral(red: 0.7233663201, green: 0.7233663201, blue: 0.7233663201, alpha: 1)
+        var str = ""
+                if section == 0{
+                    str = "Drinks"
+                } else if section == 1{
+                    str = "Food"
+                }else if section == 2{
+                    str = "Candy"
+                } else{
+                    str = "Misc"
+                }
+        view.nameLbl.text = str
+        view.prevSoldLbl.text = "Prev Sold"
+        view.invQLbl.text = "Inv Q"
+        view.orderLbl.text = "Order"
+        view.orderSugLbl.text = "Sug"
+        
         return view
     }
-//    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView,
-//                   forSection section: Int){
-//
-//        if view.subviews.count < 3{
-//            view.frame = CGRect(x: 10, y: 0, width: tableView.frame.width, height: 30)
-//            let segmentedControl = UISegmentedControl(frame: CGRect(x: 10, y: 2, width: tableView.frame.width - 20, height: 30))
-//            if section == 0{
-//                segmentedControl.insertSegment(withTitle: "Drinks", at: 0, animated: false)
-//            } else if section == 1{
-//                segmentedControl.insertSegment(withTitle: "Food", at: 0, animated: false)
-//            } else if section == 2{
-//                segmentedControl.insertSegment(withTitle: "Candy", at: 0, animated: false)
-//            }
-//            segmentedControl.insertSegment(withTitle: "Prev Sold", at: 1, animated: false)
-//            segmentedControl.insertSegment(withTitle: "Inv Q", at: 2, animated: false)
-//            segmentedControl.insertSegment(withTitle: "Order", at: 3, animated: false)
-//            segmentedControl.insertSegment(withTitle: "Order Sug", at: 4, animated: false)
-//
-//            
-//            view.addSubview(segmentedControl)
-//        }
-//
-//
-//    }
-//
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "displayItem", sender: self)
@@ -133,11 +109,11 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
             destination.item = DH.data[DH.selectedWeek].supplierArray[(tblViewStats.indexPathForSelectedRow?.section)!].itemArray[(tblViewStats.indexPathForSelectedRow?.row)!]
         }
     }
-   
+    
 }
 
 class tableViewCell: UITableViewCell, UITextFieldDelegate{
-
+    
     
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var orderSugLbl: UILabel!
@@ -149,10 +125,19 @@ class tableViewCell: UITableViewCell, UITextFieldDelegate{
     override func awakeFromNib() {
         orderField.delegate = self
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let order = orderField.text, let orderInt = Int(order){
             itemPassed?.actualOrder = orderInt
         }
     }
+}
+
+class headerView: UITableViewCell{
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var prevSoldLbl: UILabel!
+    @IBOutlet weak var invQLbl: UILabel!
+    @IBOutlet weak var orderLbl: UILabel!
+    @IBOutlet weak var orderSugLbl: UILabel!
+    
 }

@@ -31,11 +31,10 @@ class Supplier4ViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBAction func changeInfoBtn(_ sender: Any) {
         let alert = UIAlertController(title: "Info", message: "Edit Category Title, PhoneNum and Order Number", preferredStyle: .alert)
-        
+
         alert.addTextField { (textField) in
             textField.text = self.catTitle
         }
-        
         alert.addTextField { (textField) in
             textField.text = self.supPhoneNum
         }

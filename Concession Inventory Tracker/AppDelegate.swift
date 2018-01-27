@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        let vc1 = Supplier1ViewController()
+//        let vc2 = Supplier2ViewController()
+//        let vc3 = Supplier3ViewController()
+//        let vc4 = Supplier4ViewController()
+        
+//        vc1.setStrings()
+//        vc2.setStrings()
+//        vc3.setStrings()
+//        vc4.setStrings()
         
         return true
     }
