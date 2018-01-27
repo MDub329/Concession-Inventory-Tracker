@@ -11,6 +11,7 @@ import UIKit
 class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     let blackView = UIView()
+    var standArray = ["Add Stand","Stand1"]
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -55,13 +56,18 @@ class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewData
             
         })
     }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return standArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let label = UILabel()
+        let width = cell.frame.width
+        let height = cell.frame.height
+        label.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        label.text = standArray[indexPath.row]
+        cell.addSubview(label)
         return cell
     }
     
@@ -70,35 +76,27 @@ class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        UIView.animate(withDuration: 0.1, animations: {
-            cell?.backgroundColor = #colorLiteral(red: 0.7233663201, green: 0.7233663201, blue: 0.7233663201, alpha: 1)
-        })
-        DH.selectedStand = indexPath.row
         
-        if indexPath.row == indexPath.count{
-            let alert = UIAlertController(title: "Delete", message: "Are you sure you want to Delete?", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                
+        DH.selectedStand = indexPath.row
+        if indexPath.row == 0{
+            let alert = UIAlertController(title: "Add Stand?", message: "Enter Stand Name", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addTextField()
+            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action: UIAlertAction!) in
+                if let str = alert.textFields![0].text{
+                    self.standArray.append(str)
+                }
+                collectionView.reloadData()
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
                 
             }))
-            //WeekViewController.present(alert, animated: true, completion: nil)
+            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
         }
         
         
         
         handleDismiss()
-        
-        
-        
-        
-        
-        
-//        UIView.animate(withDuration: 0.7, animations: {
-//            cell?.backgroundColor = #colorLiteral(red: 0.9759812116, green: 1, blue: 0.983512733, alpha: 1)
-//        })
+ 
     }
     
     override init() {
