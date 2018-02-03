@@ -25,7 +25,7 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         pickView.dataSource = self
         DH.data.append(Week())
         DH.data.append(Week())
-        
+        navBar.title = settingsLauncher.standArray[DH.selectedStand]
     }
     
     @IBAction func addWeekButtonTap(_ sender: Any) {
@@ -128,7 +128,7 @@ class DataHandler{
     //var data = UserDefaults.standard.object(forKey: "DeepData")
     var data = [Week]()
     var selectedWeek = 0
-    var selectedStand = 0
+    var selectedStand = 1
     //var blankWeek = Week()
 }
 
