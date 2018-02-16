@@ -14,7 +14,7 @@ class Setting: NSObject{
         self.name = name
     }
 }
-class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate{
     
     let blackView = UIView()
     var standArray = ["Add Stand","Stand 1"]
@@ -30,6 +30,13 @@ class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewData
     let cellId = "cellID"
     
     @objc func showSettings() {
+        
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleReName))
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delaysTouchesBegan = true
+        lpgr.delegate = self
+        self.collectionView.addGestureRecognizer(lpgr)
+        
         if let window = UIApplication.shared.keyWindow {
             blackView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
@@ -65,31 +72,35 @@ class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewData
         
     }
     
-//    @objc func handleReName(gesture: UILongPressGestureRecognizer!){
-//        if gesture.state != .ended{
-//            return
-//        }
-//        let p = gesture.location(in: self.collectionView)
-//        if let indexPath = self.collectionView.indexPathForItem(at: p){
-//            let cell = self.collectionView.cellForItem(at: indexPath)
-//            let alert = UIAlertController(title: "Rename Stand?", message: "Enter Stand Name", preferredStyle: UIAlertControllerStyle.alert)
-//            alert.addTextField()
-//            alert.textFields![0].text = ""
-//            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action: UIAlertAction!) in
-//                if let str = alert.textFields![0].text{
-//                    self.standArray[indexPath.row] = str
-//
-//                }
-//                self.collectionView.reloadData()
-//            }))
-//            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-//
-//            }))
-//            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
-//        } else {
-//            print("Could not find Index Path in handleReName")
-//        }
-//    }
+    @objc func handleReName(gesture: UILongPressGestureRecognizer!){
+        if gesture.state != .ended{
+            return
+        }
+        let p = gesture.location(in: self.collectionView)
+        if let indexPath = self.collectionView.indexPathForItem(at: p){
+            if indexPath.row != 0{
+                let alert = UIAlertController(title: "Rename Stand?", message: "Enter Stand Name", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addTextField()
+                alert.textFields![0].text = standArray[indexPath.row]
+                alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action: UIAlertAction!) in
+                    if let str = alert.textFields![0].text{
+                        self.standArray[indexPath.row] = str
+                        
+                    }
+                    self.collectionView.reloadData()
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                    
+                }))
+                UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+            } else {
+                addStand()
+            }
+        } else {
+            print("Could not find Index Path in handleReName")
+        }
+        handleDismiss()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return standArray.count
@@ -113,27 +124,30 @@ class SettingsLauncher: NSObject, UICollectionViewDelegate, UICollectionViewData
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         if indexPath.row == 0{
-            let alert = UIAlertController(title: "Add Stand?", message: "Enter Stand Name", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addTextField()
-            alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action: UIAlertAction!) in
-                if let str = alert.textFields![0].text{
-                    self.standArray.append(str)
-                }
-                collectionView.reloadData()
-                //set selected stand to recently added stand
-            }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
-                
-            }))
-            UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+           addStand()
         } else{
              DH.selectedStand = indexPath.row
         }
         
         handleDismiss()
  
+    }
+    
+    func addStand() {
+        let alert = UIAlertController(title: "Add Stand?", message: "Enter Stand Name", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addTextField()
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action: UIAlertAction!) in
+            if let str = alert.textFields![0].text{
+                self.standArray.append(str)
+            }
+            self.collectionView.reloadData()
+            //set selected stand to recently added stand
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            
+        }))
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
     }
     
     override init() {

@@ -18,15 +18,6 @@ class StatsViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var navBStr = ""
-        if DH.selectedWeek == 0{
-            navBStr = "Starting Inventory"
-        } else if DH.data[DH.selectedWeek].finInv == true{
-            navBStr = "Final Inventory"
-        } else{
-            navBStr = "Week " + String(DH.selectedWeek)
-        }
-        navBar.title = navBStr
         self.hideKeyboardWhenTappedAround()
         
     }

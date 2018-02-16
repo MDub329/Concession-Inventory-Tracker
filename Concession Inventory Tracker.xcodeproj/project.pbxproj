@@ -68,9 +68,9 @@
 		BC0BE2512016C95900B6DC72 /* Class Objects */ = {
 			isa = PBXGroup;
 			children = (
+				BCA9A1192013D1E200A2836B /* LocationClass.swift */,
 				BCA9A11D2013D1E600A2836B /* WeekClass.swift */,
 				BCA9A11B2013D1E400A2836B /* SupplierClass.swift */,
-				BCA9A1192013D1E200A2836B /* LocationClass.swift */,
 				BCA9A1172013D1E100A2836B /* ItemClass.swift */,
 			);
 			path = "Class Objects";

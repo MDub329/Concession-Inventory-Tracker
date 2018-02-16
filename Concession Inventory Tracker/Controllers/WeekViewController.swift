@@ -10,7 +10,7 @@
 //Fix blank Week
 import UIKit
 import os.log
-class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIGestureRecognizerDelegate {
     
     
     @IBOutlet weak var navBar: UINavigationItem!
@@ -26,6 +26,7 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         DH.data.append(Week())
         DH.data.append(Week())
         navBar.title = settingsLauncher.standArray[DH.selectedStand]
+     
     }
     
     @IBAction func addWeekButtonTap(_ sender: Any) {
@@ -105,9 +106,6 @@ class WeekViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @objc func handleMore() {
         settingsLauncher.showSettings()
     }
-    
-  
-    
 }
 
 
@@ -125,10 +123,8 @@ extension UIViewController {
 
 class DataHandler{
     static let standard = DataHandler()
-    //var data = UserDefaults.standard.object(forKey: "DeepData")
     var data = [Week]()
     var selectedWeek = 0
     var selectedStand = 1
-    //var blankWeek = Week()
 }
 
